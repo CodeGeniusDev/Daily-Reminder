@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes confetti {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+@keyframes celebrate {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-ripple {
+  animation: ripple 0.8s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.animate-confetti {
+  background-image: 
+    radial-gradient(circle, #ff0 0.5rem, transparent 0),
+    radial-gradient(circle, #f0f 0.3rem, transparent 0),
+    radial-gradient(circle, #0ff 0.4rem, transparent 0),
+    radial-gradient(circle, #f00 0.2rem, transparent 0),
+    radial-gradient(circle, #0f0 0.5rem, transparent 0);
+  background-size: 10% 10%;
+  animation: confetti 1.5s linear infinite;
+}
+
+.animate-celebrate {
+  animation: celebrate 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
