@@ -113,7 +113,7 @@ const CommunityChat: React.FC = () => {
 
   const handleReportMessage = async (messageId: string) => {
     await supabase.rpc('report_message', { message_id: messageId });
-    loadMessages(); // Reload messages to reflect changes
+    // loadMessages(); // Reload messages to reflect changes
   };
 
   const handleDeleteMessage = async (messageId: string) => {
